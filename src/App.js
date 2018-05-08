@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Input from "./components/input";
-import Output from "./components/output";
 import marked from "marked";
 
 class App extends Component {
@@ -14,19 +13,21 @@ class App extends Component {
 
   helper(term) {
     this.setState({ unmarked: term });
-    // console.log(`This is it: ${term}`);
+    document.getElementById("output").innerHTML = marked(term);
   }
 
   render() {
     const helper = term => {
       this.helper(term);
     };
-    console.log(marked("# Marked in browser\n\nRendered by **marked**."));
     return (
-      <div>
-        <Input onSearchTermChange={helper} />
-        <Output markedUp={this.state.unmarked} />
-        <div id="huh" />
+      <div className="container-fluid h-100">
+        <div className="row h-100">
+          <div className="col-md-6 h-100 bg-success box-border ">
+            <Input onSearchTermChange={helper} />
+          </div>
+          <div id="output" className="col-md-6 h-100 bg-danger box-border " />
+        </div>
       </div>
     );
   }
