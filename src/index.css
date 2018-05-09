@@ -4,8 +4,17 @@ html,
   height: 100%;
 }
 
-.box-border {
-  margin: 5px;
-  border: 2px black solid;
-  overflow: hidden;
+body {
+  background-color: #697d9e;
+}
+
+#input {
+  margin-top: 6.25%;
+}
+
+#output {
+  margin-top: 6.25%;
+  border-radius: 5px;
+  border: 2px gray solid;
+  background-color: white;
 }

@@ -21,12 +21,12 @@ class App extends Component {
       this.helper(term);
     };
     return (
-      <div className="container-fluid h-100">
+      <div className="container-fluid h-100 my-auto">
         <div className="row h-100">
-          <div className="col-md-6 h-100 bg-success box-border ">
+          <div id="input" className="col-md-5 offset-md-1 h-75 ">
             <Input onSearchTermChange={helper} />
           </div>
-          <div id="output" className="col-md-6 h-100 bg-danger box-border " />
+          <div id="output" className="col-md-5 h-75" />
         </div>
       </div>
     );
